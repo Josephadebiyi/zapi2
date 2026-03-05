@@ -16,9 +16,19 @@ const sendMessage = async (to, body) => {
     }
 
     try {
-        const toNumber = String(to || '');
-        if (!toNumber) {
-            throw new Error("Recipient number is missing");
+        // Ensure 'to' is a valid string
+        if (!to || typeof to !== 'string') {
+            throw new Error(`Recipient number is invalid: ${to}`);
+        }
+
+        const toNumber = to.trim();
+        if (!toNumber || toNumber === 'undefined' || toNumber === 'null') {
+            throw new Error("Recipient number is missing or invalid");
+        }
+
+        // Ensure body is valid
+        if (!body || typeof body !== 'string') {
+            throw new Error("Message body is missing or invalid");
         }
 
         const message = await twilioClient.messages.create({

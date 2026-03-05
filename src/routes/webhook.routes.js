@@ -27,6 +27,12 @@ const twilioWebhook = async (req, res) => {
     const userMessage = req.body.Body;
     const fromNumber = req.body.From;
 
+    // Validate incoming data
+    if (!fromNumber || !userMessage) {
+        logger.error("Missing required fields in Twilio webhook", { body: req.body });
+        return;
+    }
+
     logger.logWebhook('twilio', 'message', { from: fromNumber, message: userMessage });
 
     try {
@@ -43,8 +49,9 @@ const twilioWebhook = async (req, res) => {
         // Safety check: ensure extractedData is valid
         if (!extractedData || !extractedData.intent) {
             logger.warn("Invalid extracted data from AI:", { from: fromNumber, extractedData });
-            // Detect very basic language from intent fallback
-            const msgError = (extractedData && extractedData.language === 'en')
+            // Auto-detect language from user message
+            const isEnglish = /\b(hi|hello|hey|help|book|appointment|need|want|looking)\b/i.test(userMessage);
+            const msgError = isEnglish
                 ? "I'm sorry, I couldn't understand your message. Could you try again?"
                 : "Lo siento, no pude entender tu mensaje. ¿Puedes intentar de nuevo?";
             await sendMessage(fromNumber, msgError);
@@ -58,8 +65,17 @@ const twilioWebhook = async (req, res) => {
         }
     } catch (error) {
         logger.error("Error in Twilio webhook:", { error: error.message, stack: error.stack, from: fromNumber });
-        // Assuming user is spanish by default if error gets caught before extraction but could be smarter
-        await sendMessage(fromNumber, "Lo siento, estamos experimentando problemas técnicos.");
+
+        // Auto-detect language for error message
+        try {
+            const isEnglish = userMessage && /\b(hi|hello|hey|help|book|appointment|need|want|looking)\b/i.test(userMessage);
+            const errorMsg = isEnglish
+                ? "I'm sorry, we're experiencing technical issues. Please try again in a moment."
+                : "Lo siento, estamos experimentando problemas técnicos. Por favor intenta de nuevo en un momento.";
+            await sendMessage(fromNumber, errorMsg);
+        } catch (sendError) {
+            logger.error("Failed to send error message:", sendError);
+        }
     }
 };
 

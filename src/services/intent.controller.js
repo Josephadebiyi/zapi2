@@ -31,7 +31,7 @@ const handleIntent = async (phoneNumber, extractedData) => {
             search_service: "I found the following options for you:\n",
             select_date: "Please choose a date for the service.",
             select_time: "Here are the available times for that day:\n",
-            help: "Hi, I'm the ZAPI assistant. I can help search for businesses, book appointments, or report issues. What would you like to do?",
+            help: "Hi, I'm the Seeta assistant. I can help search for businesses, book appointments, or report issues. What would you like to do?",
             complaint_logged: "We have logged your complaint and notified the business. We'll be in touch soon.",
             default: "I'm sorry, I didn't quite catch that. Could you be more specific?"
         }
