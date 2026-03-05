@@ -171,8 +171,13 @@ notificationQueue.on('failed', (job, err) => {
 // Graceful shutdown
 process.on('SIGTERM', async () => {
     logger.info('SIGTERM received. Closing queues...');
-    await paymentQueue.close();
-    await notificationQueue.close();
+    // Only close if using real Bull queues (not mock)
+    if (typeof paymentQueue.close === 'function') {
+        await paymentQueue.close();
+    }
+    if (typeof notificationQueue.close === 'function') {
+        await notificationQueue.close();
+    }
 });
 
 module.exports = {
