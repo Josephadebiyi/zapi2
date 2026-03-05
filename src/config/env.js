@@ -24,8 +24,10 @@ const getEnv = () => {
     requiredEnvVars.forEach((key) => {
         if (!process.env[key]) {
             missing.push(key);
+        } else {
+            // Trim hidden spaces from Render environment variables to strictly prevent Auth crashes
+            env[key] = typeof process.env[key] === 'string' ? process.env[key].trim() : process.env[key];
         }
-        env[key] = process.env[key];
     });
 
     if (missing.length > 0) {
