@@ -6,8 +6,6 @@ const requiredEnvVars = [
     'TWILIO_AUTH_TOKEN',
     'TWILIO_WHATSAPP_NUMBER',
     'OPENAI_API_KEY',
-    'STRIPE_SECRET_KEY',
-    'STRIPE_WEBHOOK_SECRET',
     'MONGODB_URI',
     'REDIS_URL',
     'REDIS_TOKEN', // Upstash generally uses REST token or standard Redis URL
@@ -15,12 +13,19 @@ const requiredEnvVars = [
     'JWT_SECRET'
 ];
 
+// Optional but recommended environment variables
+const optionalEnvVars = [
+    'STRIPE_SECRET_KEY',
+    'STRIPE_WEBHOOK_SECRET',
+    'MONEI_API_KEY',
+    'MONEI_WEBHOOK_SECRET'
+];
+
 const getEnv = () => {
     const env = {};
     const missing = [];
 
-    // We won't block startup on all missing vars during development, 
-    // but it's good practice to know what's missing.
+    // Process required environment variables
     requiredEnvVars.forEach((key) => {
         if (!process.env[key]) {
             missing.push(key);
@@ -30,8 +35,15 @@ const getEnv = () => {
         }
     });
 
+    // Process optional environment variables (no warnings if missing)
+    optionalEnvVars.forEach((key) => {
+        if (process.env[key]) {
+            env[key] = typeof process.env[key] === 'string' ? process.env[key].trim() : process.env[key];
+        }
+    });
+
     if (missing.length > 0) {
-        console.warn(`[WARNING] Missing environment variables: ${missing.join(', ')}`);
+        console.warn(`[WARNING] Missing required environment variables: ${missing.join(', ')}`);
     }
 
     return env;
