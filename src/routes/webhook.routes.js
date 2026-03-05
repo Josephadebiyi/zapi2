@@ -27,16 +27,16 @@ const twilioWebhook = async (req, res) => {
         // Deliberately NOT returning here so the flow continues, to unblock the user's testing.
     }
 
-    const userMessage = req.body.Body;
-    const fromNumber = req.body.From;
+    const userMessage = req.body.Body || '';
+    const fromNumber = req.body.From || '';
+
+    logger.logWebhook('twilio', 'message', { from: fromNumber, message: userMessage });
 
     // Validate incoming data
     if (!fromNumber || !userMessage) {
-        logger.error("Missing required fields in Twilio webhook", { body: req.body });
+        logger.error("Missing required fields in Twilio webhook, req.body was likely corrupted or empty.", { body: req.body });
         return;
     }
-
-    logger.logWebhook('twilio', 'message', { from: fromNumber, message: userMessage });
 
     try {
         const seetaIdMatch = userMessage.match(/[0-9a-fA-F]{24}/);
