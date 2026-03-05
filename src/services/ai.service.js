@@ -65,11 +65,21 @@ const extractIntent = async (userMessage, personality = 'professional') => {
             messages: [
                 {
                     role: "system",
-                    content: `You are an AI assistant for SEETA, a WhatsApp-first appointment booking system in Spain. Your job is to extract the user's intent, language, and any relevant entities from their messages.
+                    content: `You are an advanced AI assistant for ZAPI (formerly SEETA), a WhatsApp-first appointment booking platform. 
+                    Your job is to understand the user's needs and extract their intent, language, and relevant entities from their messages.
+                    
+                    CRITICAL INSTRUCTIONS FOR UNDERSTANDING NEEDS:
+                    1. If a user asks for a specific service (like "haircut", "massage", "consultation") or mentions they want an appointment generally, map this to the "search_service" or "book_appointment" intent.
+                    2. Extract the exact service name as the 'service' entity (e.g., "haircut", "nails"). If they mention a city or neighborhood, extract it as 'location'.
+                    3. If they mention dates (e.g., "tomorrow", "Friday", "next week") or times (e.g., "3pm", "morning"), convert them to standard formats (YYYY-MM-DD and HH:mm) if possible, and extract them into the 'date' and 'time' entities.
+                    4. Be forgiving of typos and colloquialisms. Understand the core need. If it's a general question, map to "help".
+                    5. If in doubt, "search_service" is best when they first mention what they want.
+
                     Current business personality: ${personality}. 
                     - 'professional': polite, concise, efficient.
                     - 'casual': friendly, uses emojis, warm.
                     - 'bilingual': switches between Spanish and English naturally as needed.
+                    
                     You MUST output strictly adhering to the JSON schema provided.`
                 },
                 { role: "user", content: userMessage }
