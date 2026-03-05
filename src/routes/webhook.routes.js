@@ -12,10 +12,15 @@ const twilioWebhook = async (req, res) => {
     res.status(200).send('<Response></Response>');
 
     const signature = req.headers['x-twilio-signature'];
-    const fullUrl = `${req.protocol}://${req.get('host')}${req.originalUrl}`;
+
+    // Explicitly force HTTPS for the full URL since we know we are behind a secure proxy (Render)
+    // If req.protocol is 'http' but we are actually on HTTPS, the signature validation will fail
+    const protocol = req.headers['x-forwarded-proto'] || req.protocol;
+    const host = req.headers['x-forwarded-host'] || req.get('host');
+    const fullUrl = `https://${host}${req.originalUrl}`; // Force HTTPS for Twilio signature calc
 
     if (!validateSignature(signature, fullUrl, req.body)) {
-        logger.error("Invalid Twilio signature");
+        logger.error("Invalid Twilio signature", { fullUrl });
         return;
     }
 
