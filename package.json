@@ -1,0 +1,49 @@
+{
+  "name": "zapi-backend",
+  "version": "1.0.0",
+  "description": "WhatsApp-based appointment booking platform backend",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "NODE_ENV=production node src/server.js",
+    "dev": "nodemon src/server.js",
+    "build:frontend": "cd frontend && npm run build",
+    "build": "npm run build:frontend",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "whatsapp",
+    "booking",
+    "appointments",
+    "twilio"
+  ],
+  "author": "Zapi",
+  "license": "MIT",
+  "dependencies": {
+    "@upstash/redis": "^1.36.2",
+    "axios": "^1.6.0",
+    "bcrypt": "^6.0.0",
+    "bull": "^4.16.5",
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.2.1",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.2.2",
+    "morgan": "^1.10.1",
+    "openai": "^6.25.0",
+    "paystack": "^2.0.1",
+    "resend": "^6.9.2",
+    "stripe": "^20.4.0",
+    "twilio": "^5.12.2",
+    "winston": "^3.19.0"
+  },
+  "devDependencies": {
+    "jest": "^30.2.0",
+    "nodemon": "^3.1.14",
+    "supertest": "^7.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
