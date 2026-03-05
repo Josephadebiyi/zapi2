@@ -43,7 +43,11 @@ const twilioWebhook = async (req, res) => {
         // Safety check: ensure extractedData is valid
         if (!extractedData || !extractedData.intent) {
             logger.warn("Invalid extracted data from AI:", { from: fromNumber, extractedData });
-            await sendMessage(fromNumber, "Lo siento, no pude entender tu mensaje. ¿Puedes intentar de nuevo?");
+            // Detect very basic language from intent fallback
+            const msgError = (extractedData && extractedData.language === 'en')
+                ? "I'm sorry, I couldn't understand your message. Could you try again?"
+                : "Lo siento, no pude entender tu mensaje. ¿Puedes intentar de nuevo?";
+            await sendMessage(fromNumber, msgError);
             return;
         }
 
@@ -54,6 +58,7 @@ const twilioWebhook = async (req, res) => {
         }
     } catch (error) {
         logger.error("Error in Twilio webhook:", { error: error.message, stack: error.stack, from: fromNumber });
+        // Assuming user is spanish by default if error gets caught before extraction but could be smarter
         await sendMessage(fromNumber, "Lo siento, estamos experimentando problemas técnicos.");
     }
 };

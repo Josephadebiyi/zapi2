@@ -16,10 +16,15 @@ const sendMessage = async (to, body) => {
     }
 
     try {
+        const toNumber = String(to || '');
+        if (!toNumber) {
+            throw new Error("Recipient number is missing");
+        }
+
         const message = await twilioClient.messages.create({
             body: body,
             from: `whatsapp:${env.TWILIO_WHATSAPP_NUMBER}`,
-            to: to.startsWith('whatsapp:') ? to : `whatsapp:${to}`
+            to: toNumber.startsWith('whatsapp:') ? toNumber : `whatsapp:${toNumber}`
         });
         console.log(`Message sent: ${message.sid}`);
         return message;
