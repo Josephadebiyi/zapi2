@@ -1,5 +1,5 @@
 {
-  "name": "zapi-backend",
+  "name": "seeta-backend",
   "version": "1.0.0",
   "description": "WhatsApp-based appointment booking platform backend",
   "main": "src/server.js",
@@ -16,7 +16,7 @@
     "appointments",
     "twilio"
   ],
-  "author": "Zapi",
+  "author": "Seeta",
   "license": "MIT",
   "dependencies": {
     "@upstash/redis": "^1.36.2",

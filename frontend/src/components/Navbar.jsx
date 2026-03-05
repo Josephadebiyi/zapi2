@@ -14,13 +14,13 @@ const Navbar = () => {
                 <div style={{ width: '48px', height: '48px' }}>
                     <LogoIcon />
                 </div>
-                ZAPI
+                SEETA
             </Link>
 
             {/* Desktop Navigation */}
             <nav className="nav-links desktop-nav">
                 <Link to="/about" className="nav-item">{t.navInfo.about}</Link>
-                <Link to="/why-zapi" className="nav-item">{t.navInfo.why}</Link>
+                <Link to="/why-seeta" className="nav-item">{t.navInfo.why}</Link>
                 <Link to="/how-to-use" className="nav-item">{t.navInfo.how}</Link>
                 <Link to="/contact" className="nav-item">{t.navInfo.contact}</Link>
             </nav>
@@ -54,7 +54,7 @@ const Navbar = () => {
             {isOpen && (
                 <div className="mobile-nav">
                     <Link to="/about" className="nav-item" onClick={() => setIsOpen(false)}>{t.navInfo.about}</Link>
-                    <Link to="/why-zapi" className="nav-item" onClick={() => setIsOpen(false)}>{t.navInfo.why}</Link>
+                    <Link to="/why-seeta" className="nav-item" onClick={() => setIsOpen(false)}>{t.navInfo.why}</Link>
                     <Link to="/how-to-use" className="nav-item" onClick={() => setIsOpen(false)}>{t.navInfo.how}</Link>
                     <Link to="/contact" className="nav-item" onClick={() => setIsOpen(false)}>{t.navInfo.contact}</Link>
                     <div className="mobile-nav-actions">

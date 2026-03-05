@@ -1,7 +1,7 @@
-# Twilio WhatsApp Configuration Guide for ZAPI
+# Twilio WhatsApp Configuration Guide for SEETA
 
 ## Overview
-This guide explains how to configure Twilio's WhatsApp Business API for your ZAPI installation.
+This guide explains how to configure Twilio's WhatsApp Business API for your SEETA installation.
 
 ## Required Information for Twilio
 
@@ -97,7 +97,7 @@ https://your-domain.com/api/webhooks/twilio
 
 ### Step 4: Update Your .env File
 
-Add these three variables to your `.env` file in the ZAPI root directory:
+Add these three variables to your `.env` file in the SEETA root directory:
 
 ```bash
 # Twilio WhatsApp Integration
@@ -133,7 +133,7 @@ Use **ngrok** to expose your local server:
 # Install ngrok
 npm install -g ngrok
 
-# Run your ZAPI server
+# Run your SEETA server
 npm start
 
 # In another terminal, expose port 5000
@@ -148,12 +148,12 @@ Your webhook URL: `https://abc123.ngrok.io/api/webhooks/twilio`
 
 ---
 
-## How ZAPI Processes WhatsApp Messages
+## How SEETA Processes WhatsApp Messages
 
 ### Message Flow:
 
 ```
-WhatsApp User → Twilio → Your Webhook → ZAPI Backend
+WhatsApp User → Twilio → Your Webhook → SEETA Backend
                                         ↓
                                     OpenAI (Intent Extraction)
                                         ↓
@@ -182,7 +182,7 @@ WhatsApp User → Twilio → Your Webhook → ZAPI Backend
 
 ### Test 1: Check Credentials
 ```bash
-# From your ZAPI directory
+# From your SEETA directory
 npm start
 
 # Look for this in the logs:
@@ -241,14 +241,14 @@ In Twilio Console:
 ### Issue 5: "Request timeout"
 **Solution:**
 - Your webhook must respond in < 15 seconds
-- ZAPI responds immediately with `<Response></Response>`
+- SEETA responds immediately with `<Response></Response>`
 - Processing happens asynchronously
 
 ---
 
 ## Security Best Practices
 
-1. **Always validate signatures:** ZAPI does this automatically
+1. **Always validate signatures:** SEETA does this automatically
 2. **Use HTTPS:** Never HTTP in production
 3. **Keep Auth Token secret:** Never commit to git
 4. **Rate limiting:** Implement on your server
@@ -296,11 +296,11 @@ Check current pricing: https://www.twilio.com/whatsapp/pricing
 
 If you have issues:
 1. Check Twilio Console → Monitor → Logs
-2. Check your ZAPI server logs
+2. Check your SEETA server logs
 3. Review this guide's troubleshooting section
 4. Contact Twilio Support: https://support.twilio.com
 
 ---
 
 **Last Updated:** 2026-03-05
-**ZAPI Version:** 1.0.0
+**SEETA Version:** 1.0.0

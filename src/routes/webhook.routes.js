@@ -25,11 +25,11 @@ const twilioWebhook = async (req, res) => {
     logger.logWebhook('twilio', 'message', { from: fromNumber, message: userMessage });
 
     try {
-        const zapiIdMatch = userMessage.match(/[0-9a-fA-F]{24}/);
+        const seetaIdMatch = userMessage.match(/[0-9a-fA-F]{24}/);
         let personality = 'professional';
 
-        if (zapiIdMatch) {
-            const biz = await Business.findById(zapiIdMatch[0]);
+        if (seetaIdMatch) {
+            const biz = await Business.findById(seetaIdMatch[0]);
             if (biz) personality = biz.aiPersonality;
         }
 

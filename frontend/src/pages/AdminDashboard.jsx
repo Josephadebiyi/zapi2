@@ -18,7 +18,7 @@ const AdminDashboard = () => {
     const businesses = [
         {
             id: '65dd12345678901234567890',
-            name: "ZAPI Luxe Salon",
+            name: "Seeta Luxe Salon",
             email: "luxe@zapisalon.com",
             location: "Madrid, Calle Serrano 15",
             personality: "casual",
@@ -62,7 +62,7 @@ const AdminDashboard = () => {
                         <div style={{ width: '40px', height: '40px' }}><LogoIcon /></div>
                         <div>
                             <h1 style={{ fontSize: '1.75rem', fontWeight: 800, margin: 0, color: '#111' }}>Admin Central</h1>
-                            <p style={{ color: '#6B7280', margin: 0 }}>System-wide management of ZAPI business ecosystem</p>
+                            <p style={{ color: '#6B7280', margin: 0 }}>System-wide management of Seeta business ecosystem</p>
                         </div>
                     </div>
                     <button className="btn btn-primary" style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '12px 24px' }}>
@@ -112,7 +112,7 @@ const AdminDashboard = () => {
                             <thead>
                                 <tr style={{ backgroundColor: '#F9FAFB' }}>
                                     <th style={{ padding: '16px 24px', color: '#6B7280', fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.5px' }}>Business Details</th>
-                                    <th style={{ padding: '16px 24px', color: '#6B7280', fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.5px' }}>ZAPI ID / Reference</th>
+                                    <th style={{ padding: '16px 24px', color: '#6B7280', fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.5px' }}>SEETA ID / Reference</th>
                                     <th style={{ padding: '16px 24px', color: '#6B7280', fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.5px' }}>AI Personality</th>
                                     <th style={{ padding: '16px 24px', color: '#6B7280', fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.5px' }}>Status</th>
                                     <th style={{ padding: '16px 24px' }}></th>

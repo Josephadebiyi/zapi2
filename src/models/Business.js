@@ -7,7 +7,7 @@ const businessSchema = new mongoose.Schema({
     trim: true,
     index: true
   },
-  zapiId: {
+  seetaId: {
     type: String,
     unique: true,
     sparse: true, // Allows null until KYC approved
@@ -151,24 +151,24 @@ const businessSchema = new mongoose.Schema({
   timestamps: true
 });
 
-// Generate 4-digit ZAPI ID before saving
+// Generate 4-digit SEETA ID before saving
 businessSchema.pre('save', async function(next) {
-  if (!this.zapiId && this.isNew) {
+  if (!this.seetaId && this.isNew) {
     let unique = false;
-    let zapiId;
+    let seetaId;
 
     while (!unique) {
       // Generate random 4-digit number
-      zapiId = Math.floor(1000 + Math.random() * 9000).toString();
+      seetaId = Math.floor(1000 + Math.random() * 9000).toString();
 
       // Check if it already exists
-      const existing = await mongoose.model('Business').findOne({ zapiId });
+      const existing = await mongoose.model('Business').findOne({ seetaId });
       if (!existing) {
         unique = true;
       }
     }
 
-    this.zapiId = zapiId;
+    this.seetaId = seetaId;
   }
   next();
 });

@@ -2,7 +2,7 @@
 
 ## What Was Done
 
-I've successfully configured ZAPI to serve the frontend build from a static `public/` folder. This allows you to run a single production server instead of two separate dev servers.
+I've successfully configured SEETA to serve the frontend build from a static `public/` folder. This allows you to run a single production server instead of two separate dev servers.
 
 ---
 
@@ -10,7 +10,7 @@ I've successfully configured ZAPI to serve the frontend build from a static `pub
 
 ### 1. **Created `public/` Folder** ✅
 ```
-ZAPI/
+SEETA/
 ├── public/              ← NEW folder
 │   ├── .gitkeep        ← Keeps folder in git
 │   ├── index.html      ← Built React app
@@ -165,7 +165,7 @@ curl http://localhost:5000/health        # → {"status":"ok",...}
 ## File Structure
 
 ```
-ZAPI/
+SEETA/
 ├── public/                  ← Frontend build output (git-ignored)
 │   ├── .gitkeep            ← Keeps folder in git
 │   ├── index.html          ← React app entry
@@ -205,7 +205,7 @@ ZAPI/
 ✅ **Build scripts added**
 ✅ **Git ignore configured**
 
-**Result**: You can now deploy ZAPI as a single server application!
+**Result**: You can now deploy SEETA as a single server application!
 
 ---
 

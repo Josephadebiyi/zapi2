@@ -1,11 +1,11 @@
-# ZAPI Setup Guide
+# SEETA Setup Guide
 
 ## Overview
-ZAPI is a WhatsApp-first appointment booking platform for Spanish businesses, powered by AI intent extraction.
+SEETA is a WhatsApp-first appointment booking platform for Spanish businesses, powered by AI intent extraction.
 
 ## Prerequisites
 
-Before running ZAPI, you need to set up accounts and get API keys for the following services:
+Before running SEETA, you need to set up accounts and get API keys for the following services:
 
 ### Required Services
 
@@ -70,7 +70,7 @@ Edit `.env` and fill in your API keys:
 
 ```env
 # Database
-MONGODB_URI=mongodb+srv://youruser:yourpass@cluster.mongodb.net/zapi
+MONGODB_URI=mongodb+srv://youruser:yourpass@cluster.mongodb.net/seeta
 
 # Twilio WhatsApp
 TWILIO_ACCOUNT_SID=ACxxxxxxxxxxxx
@@ -102,7 +102,7 @@ MONEI_WEBHOOK_SECRET=your_monei_secret
 node seed.js
 ```
 
-This creates a demo business (ZAPI Luxe Salon) in Madrid with sample services.
+This creates a demo business (SEETA Luxe Salon) in Madrid with sample services.
 
 ### 4. Run the Application
 

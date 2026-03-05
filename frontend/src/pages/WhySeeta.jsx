@@ -3,7 +3,7 @@ import Footer from '../components/Footer';
 import { Zap, Shield, MessageCircle } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
-const WhyZapi = () => {
+const WhySeeta = () => {
     const { t } = useLanguage();
 
     return (
@@ -50,4 +50,4 @@ const WhyZapi = () => {
     );
 };
 
-export default WhyZapi;
+export default WhySeeta;

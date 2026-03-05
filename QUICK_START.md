@@ -1,4 +1,4 @@
-# ZAPI Quick Start Guide 🚀
+# SEETA Quick Start Guide 🚀
 
 ## Your App is Running! ✅
 
@@ -89,7 +89,7 @@ Go to: http://localhost:5179/
 ## File Structure (What Changed)
 
 ```
-ZAPI/
+SEETA/
 ├── TWILIO_WHATSAPP_SETUP.md          ← NEW: Complete WhatsApp setup guide
 ├── DASHBOARD_UPGRADE_SUMMARY.md      ← NEW: Full upgrade documentation
 ├── QUICK_START.md                    ← NEW: This file
@@ -114,7 +114,7 @@ ZAPI/
 
 ```bash
 # Terminal 1 - Backend
-cd /Users/j/Desktop/CLAUDE/ZAPI
+cd /Users/j/Desktop/CLAUDE/SEETA
 npm start
 # Should run on http://localhost:5000
 
@@ -280,7 +280,7 @@ npm start
 
 ## Congratulations! 🎉
 
-Your ZAPI app is now a **real, functional business management system** with:
+Your SEETA app is now a **real, functional business management system** with:
 - ✅ Safe signup with validation
 - ✅ Country + phone number collection
 - ✅ Full dashboard with routing

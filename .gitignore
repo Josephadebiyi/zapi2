@@ -19,3 +19,6 @@ coverage/
 # Frontend build output
 public/*
 !public/.gitkeep
+
+# Render
+.render/

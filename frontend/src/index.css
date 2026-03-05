@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
 
 :root {
-  /* ZAPI Logo Colors */
-  --zapi-lime: #AEFE00;
-  --zapi-purple: #6E3FF3;
+  /* SEETA Logo Colors */
+  --seeta-lime: #AEFE00;
+  --seeta-purple: #6E3FF3;
 
   /* Brand Theme Colors matching design */
   --theme-mint: #C4F1E0;
@@ -70,7 +70,7 @@ body {
 }
 
 .btn-primary {
-  background-color: var(--zapi-lime);
+  background-color: var(--seeta-lime);
   color: var(--text-dark);
 }
 
@@ -198,8 +198,8 @@ main {
 }
 
 .logo-icon {
-  background-color: var(--zapi-purple);
-  color: var(--zapi-lime);
+  background-color: var(--seeta-purple);
+  color: var(--seeta-lime);
   width: 48px;
   height: 48px;
   border-radius: 12px;

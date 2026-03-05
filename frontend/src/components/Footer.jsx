@@ -13,7 +13,7 @@ const Footer = () => {
                     <div style={{ width: '150px' }}>
                         <h4 style={{ fontSize: '1.1rem', marginBottom: '20px', fontWeight: 800 }}>Product</h4>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                            <Link to="/why-zapi" style={{ color: 'var(--text-gray)', textDecoration: 'none', fontWeight: 600 }}>{t.navInfo.why}</Link>
+                            <Link to="/why-seeta" style={{ color: 'var(--text-gray)', textDecoration: 'none', fontWeight: 600 }}>{t.navInfo.why}</Link>
                             <Link to="/how-to-use" style={{ color: 'var(--text-gray)', textDecoration: 'none', fontWeight: 600 }}>{t.navInfo.how}</Link>
                         </div>
                     </div>
@@ -48,7 +48,7 @@ const Footer = () => {
                 <div style={{ width: '80px', height: '80px' }}>
                     <LogoIcon />
                 </div>
-                <div style={{ fontSize: '3rem', fontWeight: 900, letterSpacing: '-0.05em' }}>ZAPI</div>
+                <div style={{ fontSize: '3rem', fontWeight: 900, letterSpacing: '-0.05em' }}>SEETA</div>
             </div>
         </footer>
     );

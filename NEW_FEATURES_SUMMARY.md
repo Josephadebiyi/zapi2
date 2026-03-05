@@ -1,8 +1,8 @@
-# ZAPI New Features Summary 🎉
+# SEETA New Features Summary 🎉
 
 ## What Was Added
 
-### 1. ✅ **4-Digit ZAPI ID**
+### 1. ✅ **4-Digit SEETA ID**
 **Backend:** [Business.js:10-16, 154-174](src/models/Business.js)
 
 - **Auto-generated** 4-digit unique ID for every business (1000-9999)
@@ -10,7 +10,7 @@
 - Displayed prominently in dashboard
 - Used for business identification
 
-**Example:** Business "Acme Salon" gets ZAPI ID: `5847`
+**Example:** Business "Acme Salon" gets SEETA ID: `5847`
 
 ---
 
@@ -133,10 +133,10 @@ Each service can be:
 
 ---
 
-### ZAPI ID Usage:
+### SEETA ID Usage:
 
 **Customer Side:**
-- "Book with ZAPI #5847"
+- "Book with SEETA #5847"
 - Easy to remember & share
 - Used in WhatsApp messages
 
@@ -154,7 +154,7 @@ Each service can be:
 #### Business Model (`src/models/Business.js`):
 ```javascript
 {
-  zapiId: String,              // 4-digit unique ID
+  seetaId: String,              // 4-digit unique ID
   isAvailable: Boolean,        // Availability toggle
   services: [{
     name: String,
@@ -168,13 +168,13 @@ Each service can be:
 }
 ```
 
-#### Auto-Generate ZAPI ID:
+#### Auto-Generate SEETA ID:
 ```javascript
 // Pre-save hook generates unique 4-digit ID
 businessSchema.pre('save', async function(next) {
-  if (!this.zapiId && this.isNew) {
+  if (!this.seetaId && this.isNew) {
     // Generate 1000-9999
-    this.zapiId = Math.floor(1000 + Math.random() * 9000).toString();
+    this.seetaId = Math.floor(1000 + Math.random() * 9000).toString();
   }
   next();
 });
@@ -190,7 +190,7 @@ businessSchema.pre('save', async function(next) {
 - ✅ Modal form with payment toggle
 
 #### Settings Page (To Be Updated):
-- Display ZAPI ID prominently
+- Display SEETA ID prominently
 - Availability toggle switch
 - Profile image upload
 - Read-only fields (grayed out)
@@ -203,7 +203,7 @@ businessSchema.pre('save', async function(next) {
 
 ### 1. **Update Settings Page**
 Add these sections:
-- **Profile Header:** ZAPI ID + Profile Image
+- **Profile Header:** SEETA ID + Profile Image
 - **Availability Section:** Toggle with explanation
 - **ID Verification:** Status banner
 - **Editable Fields:** Email, Address only
@@ -222,7 +222,7 @@ Add these sections:
 - Cookie Policy
 
 ### 4. **Public Business Directory**
-- Search by ZAPI ID
+- Search by SEETA ID
 - Filter by `isAvailable`
 - Show only `kycStatus: 'approved'`
 - Hide unavailable businesses
@@ -244,9 +244,9 @@ Add these sections:
 - [ ] Toggle back to "Available"
 - [ ] Check WhatsApp responses (when integrated)
 
-### ZAPI ID:
+### SEETA ID:
 - [ ] Register new business
-- [ ] Check ZAPI ID generated (4 digits)
+- [ ] Check SEETA ID generated (4 digits)
 - [ ] Verify uniqueness
 - [ ] Display in dashboard
 - [ ] Use in customer communications
@@ -257,12 +257,12 @@ Add these sections:
 
 **For existing businesses:**
 ```javascript
-// Run this to add ZAPI IDs to existing records
-db.businesses.find({ zapiId: null }).forEach(business => {
-  const zapiId = Math.floor(1000 + Math.random() * 9000).toString();
+// Run this to add SEETA IDs to existing records
+db.businesses.find({ seetaId: null }).forEach(business => {
+  const seetaId = Math.floor(1000 + Math.random() * 9000).toString();
   db.businesses.updateOne(
     { _id: business._id },
-    { $set: { zapiId: zapiId, isAvailable: true } }
+    { $set: { seetaId: seetaId, isAvailable: true } }
   );
 });
 ```
@@ -272,10 +272,10 @@ db.businesses.find({ zapiId: null }).forEach(business => {
 ## API Endpoints Affected
 
 ### Registration:
-- `POST /api/business/register` - Auto-generates ZAPI ID
+- `POST /api/business/register` - Auto-generates SEETA ID
 
 ### Profile:
-- `GET /api/business/profile` - Returns ZAPI ID & availability
+- `GET /api/business/profile` - Returns SEETA ID & availability
 - `PUT /api/business/profile` - Can update:
   - ✅ `email`
   - ✅ `location` (address)

@@ -344,7 +344,7 @@ const Login = () => {
     }
 
     return (
-        <div style={{ minHeight: '100vh', display: 'flex', background: 'var(--zapi-mint)' }}>
+        <div style={{ minHeight: '100vh', display: 'flex', background: 'var(--seeta-mint)' }}>
             <div style={{ flex: 1, display: 'flex', flexDirection: 'column', padding: '40px' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <Link to="/" className="logo" style={{ textDecoration: 'none', color: 'var(--text-dark)', fontSize: '1.5rem', fontWeight: 800, display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -367,7 +367,7 @@ const Login = () => {
                         {!isLogin && (
                             <div style={{ display: 'flex', gap: '8px', marginBottom: '24px' }}>
                                 {[1, 2, 3].map(s => (
-                                    <div key={s} style={{ flex: 1, height: '4px', borderRadius: '2px', backgroundColor: s <= step ? 'var(--zapi-purple)' : '#ddd' }}></div>
+                                    <div key={s} style={{ flex: 1, height: '4px', borderRadius: '2px', backgroundColor: s <= step ? 'var(--seeta-purple)' : '#ddd' }}></div>
                                 ))}
                             </div>
                         )}
@@ -384,7 +384,7 @@ const Login = () => {
                             {isLogin ? t.login.noAccount : t.login.hasAccount}
                             <button
                                 onClick={() => { setIsLogin(!isLogin); setStep(1); }}
-                                style={{ background: 'none', border: 'none', color: 'var(--zapi-purple)', fontWeight: 600, cursor: 'pointer', fontSize: '0.95rem' }}
+                                style={{ background: 'none', border: 'none', color: 'var(--seeta-purple)', fontWeight: 600, cursor: 'pointer', fontSize: '0.95rem' }}
                             >
                                 {isLogin ? t.login.signUpBtn : t.login.logInBtn}
                             </button>
@@ -393,8 +393,8 @@ const Login = () => {
                 </div>
             </div>
 
-            <div className="desktop-login-side" style={{ flex: 1, backgroundColor: 'var(--zapi-purple)', position: 'relative', overflow: 'hidden' }}>
-                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, background: 'linear-gradient(135deg, var(--zapi-purple), #3A1F96)', padding: '60px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+            <div className="desktop-login-side" style={{ flex: 1, backgroundColor: 'var(--seeta-purple)', position: 'relative', overflow: 'hidden' }}>
+                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, background: 'linear-gradient(135deg, var(--seeta-purple), #3A1F96)', padding: '60px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                     <h2 style={{ color: '#fff', fontSize: '3.5rem', marginBottom: '24px' }}>Automate your local business today.</h2>
                     <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1.25rem', maxWidth: '400px', lineHeight: 1.6 }}>"The KYC and setup process in ZAPI is seamless, allowing me to start accepting paid appointments in minutes."</p>
                 </div>

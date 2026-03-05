@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 import { useLanguage } from '../context/LanguageContext';
 
 const Stars = () => (
-    <div style={{ display: 'flex', gap: '4px', color: 'var(--zapi-lime)' }}>
+    <div style={{ display: 'flex', gap: '4px', color: 'var(--seeta-lime)' }}>
         <Star fill="currentColor" size={16} />
         <Star fill="currentColor" size={16} />
         <Star fill="currentColor" size={16} />
@@ -24,7 +24,7 @@ const Landing = () => {
                 {/* HERO SECTION */}
                 <section className="container text-center" style={{ paddingTop: '80px', paddingBottom: '40px' }}>
                     <div className="badge">
-                        <Sparkles size={14} style={{ marginRight: '8px', color: 'var(--zapi-purple)' }} />
+                        <Sparkles size={14} style={{ marginRight: '8px', color: 'var(--seeta-purple)' }} />
                         {t.hero.badge}
                     </div>
                     <h1 style={{ maxWidth: '900px', margin: '0 auto 24px', color: 'var(--text-dark)' }}>
@@ -59,19 +59,19 @@ const Landing = () => {
                                 <div style={{ alignSelf: 'flex-start', background: '#fff', border: '2px solid #111', padding: '16px 24px', borderRadius: '24px 24px 24px 4px', maxWidth: '80%' }}>
                                     <p style={{ margin: 0, fontWeight: 600, color: '#111' }}>Quiero cita para mañana en la peluquería.</p>
                                 </div>
-                                <div style={{ alignSelf: 'flex-end', background: 'var(--zapi-lime)', border: '2px solid #111', padding: '16px 24px', borderRadius: '24px 24px 4px 24px', maxWidth: '80%' }}>
+                                <div style={{ alignSelf: 'flex-end', background: 'var(--seeta-lime)', border: '2px solid #111', padding: '16px 24px', borderRadius: '24px 24px 4px 24px', maxWidth: '80%' }}>
                                     <p style={{ margin: 0, fontWeight: 600, color: '#111' }}>¡Hola! Claro, tengo hueco a las 11:00 o a las 17:30. ¿Cuál prefieres?</p>
                                 </div>
                                 <div style={{ alignSelf: 'flex-start', background: '#fff', border: '2px solid #111', padding: '16px 24px', borderRadius: '24px 24px 24px 4px', maxWidth: '80%' }}>
                                     <p style={{ margin: 0, fontWeight: 600, color: '#111' }}>A las 17:30 perfecto.</p>
                                 </div>
-                                <div style={{ alignSelf: 'flex-end', background: 'var(--zapi-lime)', border: '2px solid #111', padding: '16px 24px', borderRadius: '24px 24px 4px 24px', maxWidth: '80%' }}>
+                                <div style={{ alignSelf: 'flex-end', background: 'var(--seeta-lime)', border: '2px solid #111', padding: '16px 24px', borderRadius: '24px 24px 4px 24px', maxWidth: '80%' }}>
                                     <p style={{ margin: 0, fontWeight: 600, color: '#111' }}>Hecho. Paga aquí para confirmar tu reserva por Bizum: checkout.stripe.com/p/...</p>
                                 </div>
                             </div>
                         </div>
                         {/* Decorative elements */}
-                        <div style={{ position: 'absolute', top: '10%', right: '-5%', background: 'var(--zapi-lime)', border: '2px solid #111', borderRadius: '50%', width: '60px', height: '60px', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 11, boxShadow: '4px 4px 0 rgba(0,0,0,1)' }}>
+                        <div style={{ position: 'absolute', top: '10%', right: '-5%', background: 'var(--seeta-lime)', border: '2px solid #111', borderRadius: '50%', width: '60px', height: '60px', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 11, boxShadow: '4px 4px 0 rgba(0,0,0,1)' }}>
                             <Zap size={24} color="#111" />
                         </div>
                     </div>

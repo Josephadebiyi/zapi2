@@ -65,7 +65,7 @@ const extractIntent = async (userMessage, personality = 'professional') => {
             messages: [
                 {
                     role: "system",
-                    content: `You are an AI assistant for ZAPI, a WhatsApp-first appointment booking system in Spain. Your job is to extract the user's intent, language, and any relevant entities from their messages.
+                    content: `You are an AI assistant for SEETA, a WhatsApp-first appointment booking system in Spain. Your job is to extract the user's intent, language, and any relevant entities from their messages.
                     Current business personality: ${personality}. 
                     - 'professional': polite, concise, efficient.
                     - 'casual': friendly, uses emojis, warm.

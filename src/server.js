@@ -13,7 +13,7 @@ const app = express();
 // Connect to MongoDB
 connectDB();
 
-logger.info('Starting ZAPI server...');
+logger.info('Starting SEETA server...');
 
 // Middleware
 app.use(helmet({
@@ -69,6 +69,6 @@ app.use((err, _req, res, _next) => {
 
 const PORT = env.PORT || 3000;
 app.listen(PORT, () => {
-    logger.info(`ZAPI server running on port ${PORT}`);
+    logger.info(`SEETA server running on port ${PORT}`);
     logger.info(`Environment: ${process.env.NODE_ENV || 'development'}`);
 });

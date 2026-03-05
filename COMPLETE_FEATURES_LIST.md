@@ -1,4 +1,4 @@
-# ZAPI Complete Features List 🚀
+# SEETA Complete Features List 🚀
 
 ## ✅ Everything That's Been Built
 
@@ -88,7 +88,7 @@
 
 ---
 
-## 4. **4-Digit ZAPI ID System** 🆕 ✅
+## 4. **4-Digit SEETA ID System** 🆕 ✅
 
 ### Features:
 - ✅ Auto-generated unique 4-digit ID (1000-9999)
@@ -100,11 +100,11 @@
 ### Backend:
 ```javascript
 // Auto-generates on save
-zapiId: "5847"
+seetaId: "5847"
 ```
 
 ### Use Cases:
-- Customer reference: "Book with ZAPI #5847"
+- Customer reference: "Book with SEETA #5847"
 - Marketing materials
 - WhatsApp identification
 - Easy sharing
@@ -203,7 +203,7 @@ kycRejectionReason: String
 ### New Fields:
 ```javascript
 {
-  zapiId: String,              // 4-digit unique ID
+  seetaId: String,              // 4-digit unique ID
   isAvailable: Boolean,        // Availability toggle
   services: [{
     requiresPayment: Boolean   // Payment option
@@ -270,7 +270,7 @@ GET    /api/dashboard/stats       - Get statistics
 ## Features To Be Added (Next Phase)
 
 ### 1. **Enhanced Settings Page**
-- [ ] ZAPI ID display (prominent)
+- [ ] SEETA ID display (prominent)
 - [ ] Profile image upload
 - [ ] Availability toggle UI
 - [ ] Read-only fields (grayed out)
@@ -306,7 +306,7 @@ GET    /api/dashboard/stats       - Get statistics
 
 ### 5. **Public Features**
 - [ ] Business directory
-- [ ] Search by ZAPI ID
+- [ ] Search by SEETA ID
 - [ ] Filter by availability
 - [ ] Only show approved businesses
 
@@ -319,14 +319,14 @@ GET    /api/dashboard/stats       - Get statistics
 2. Bookings management
 3. Services CRUD with payment options
 4. Country & phone number collection
-5. 4-digit ZAPI ID generation
+5. 4-digit SEETA ID generation
 6. Availability field in database
 7. Mobile responsive design
 8. WhatsApp integration (with Twilio setup)
 
 ### 🚧 **Backend Ready, Frontend Pending:**
 1. ID verification status display
-2. ZAPI ID prominent display
+2. SEETA ID prominent display
 3. Availability toggle UI
 4. Profile image upload
 5. Read-only field enforcement
@@ -352,7 +352,7 @@ http://localhost:5179/login
 → Step 2: Business details
 → Step 3: Owner information
 → Complete registration
-→ Check database for generated ZAPI ID
+→ Check database for generated SEETA ID
 ```
 
 ### 2. **Services with Payment**
@@ -401,7 +401,7 @@ business.save();
 {
   _id: ObjectId,
   name: "Acme Salon",
-  zapiId: "5847",               // NEW!
+  seetaId: "5847",               // NEW!
   email: "contact@acme.com",
   phone: "+34600123456",
   dialCode: "+34",
@@ -431,7 +431,7 @@ business.save();
 ## File Structure
 
 ```
-ZAPI/
+SEETA/
 ├── TWILIO_WHATSAPP_SETUP.md         ← WhatsApp guide
 ├── DASHBOARD_UPGRADE_SUMMARY.md      ← Dashboard docs
 ├── NEW_FEATURES_SUMMARY.md           ← New features
@@ -470,7 +470,7 @@ ZAPI/
 8. ✅ Proper routing
 
 ### New Business Features:
-1. ✅ 4-digit ZAPI ID
+1. ✅ 4-digit SEETA ID
 2. ✅ Availability toggle
 3. ✅ Service payment options
 4. ✅ Country & dial code selection
@@ -492,7 +492,7 @@ ZAPI/
 
 ### Core Features:
 - [ ] Register new account
-- [ ] Check ZAPI ID generated
+- [ ] Check SEETA ID generated
 - [ ] Login with credentials
 - [ ] View dashboard overview
 - [ ] Add/edit/delete services
@@ -542,11 +542,11 @@ ZAPI/
 **Status:** ✅ Production Ready
 **Date:** 2026-03-05
 
-**Your ZAPI app now has:**
+**Your SEETA app now has:**
 - ✅ Real dashboard (not demo!)
 - ✅ Full booking management
 - ✅ Service payment options
-- ✅ 4-digit ZAPI ID system
+- ✅ 4-digit SEETA ID system
 - ✅ Availability management
 - ✅ Mobile responsive design
 - ✅ Country & phone collection

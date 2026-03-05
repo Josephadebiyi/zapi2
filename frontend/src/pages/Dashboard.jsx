@@ -91,7 +91,7 @@ const Dashboard = () => {
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '40px' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                         <div style={{ width: '32px', height: '32px' }}><LogoIcon /></div>
-                        <span style={{ fontSize: '1.25rem', fontWeight: 800 }}>ZAPI</span>
+                        <span style={{ fontSize: '1.25rem', fontWeight: 800 }}>SEETA</span>
                     </div>
                     <button
                         className="mobile-close-btn"
@@ -228,7 +228,7 @@ const Dashboard = () => {
                 </button>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                     <div style={{ width: '24px', height: '24px' }}><LogoIcon /></div>
-                    <span style={{ fontWeight: 800 }}>ZAPI</span>
+                    <span style={{ fontWeight: 800 }}>SEETA</span>
                 </div>
                 <div style={{ width: '24px' }}></div>
             </header>
